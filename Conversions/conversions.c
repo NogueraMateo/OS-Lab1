@@ -10,6 +10,7 @@ int main() {
         printf("%d\t%d\t%o\t%x\n", i, i, i, i);
     }
 
+    printf("\n");
     return 0;
 }
 

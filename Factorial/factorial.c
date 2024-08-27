@@ -18,6 +18,7 @@ int main() {
     }
         
     printf("The factorial of the number %d is: %d\n", number, calculate_factorial(number));
+    printf("\n");
     
     return 0;
 }

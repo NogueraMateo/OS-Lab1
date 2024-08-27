@@ -38,5 +38,7 @@ int main() {
                operatingSystemsGrades[i].passed ? "Yes" : "No");
     }
 
+    printf("\n");
+
     return 0;
 }

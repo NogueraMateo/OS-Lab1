@@ -18,6 +18,7 @@ int main() {
     scanf("%lf", &n3);
 
     printf("The greater of the three numbers %.2f, %.2f and %.2f is: %.2f", n1, n2, n3, greaterOfThree( n1, n2, n3));
+    printf("\n");
 
     return 0;
 }

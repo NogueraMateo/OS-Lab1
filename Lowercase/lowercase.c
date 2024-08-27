@@ -31,6 +31,8 @@ int main() {
 
     printf("The character %c is not a letter\n", letter );
     
+    printf("\n");
+
 
     return 0;
 }

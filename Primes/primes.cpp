@@ -91,5 +91,6 @@ int main() {
             break;
         }
     } while (option != 0);
-    
+    printf("\n");
+    return 0;
 }

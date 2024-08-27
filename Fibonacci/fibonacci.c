@@ -24,6 +24,7 @@ int main() {
     printf("Ingresa la posicion hasta donde quieres imprimir la serie de Fibonacci: ");
     scanf("%d", &position);
     fibonacci(position);
+    printf("\n");
 
     return 0;
 }

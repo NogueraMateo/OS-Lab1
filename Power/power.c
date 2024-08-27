@@ -22,7 +22,7 @@ int main() {
     printf("Enter the exponent: ");
     scanf("%d", &exponent);
 
-    printf("The result of %d to the power of %d is: %f", number, exponent, calculate_power(number, exponent));
-
+    printf("The result of %d to the power of %d is: %f\n", number, exponent, calculate_power(number, exponent));
+    
     return 0;
 }

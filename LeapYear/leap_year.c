@@ -35,5 +35,7 @@ int main() {
         printf("The year %d is not a leap year\n", year);
     }
 
+    printf("\n");
+
     return 0;
 }
