@@ -1,44 +1,60 @@
 #include <stdio.h>
+#include <stdbool.h>
 
-typedef struct
+struct grades
 {
     char name[30];
-    double grade;
-    int passed;
-} Grade;
-
+    float nE1;
+    float nE2;
+    float nAQ;
+    float nP;
+    float grade;
+    bool passed;
+};
 
 int main() {
+    int n;
 
-    int totalStudents;
-    printf("Enter the total of students: ");
-    scanf("%d", &totalStudents);
+    printf("Enter mount students: ");
+    scanf("%d", &n);
 
-    Grade operatingSystemsGrades[totalStudents];
+    struct grades students[n];
 
-    for (int i= 0; i < totalStudents; ++i) {
-        printf("Enter the name of the %d student: ", i+1);
-        scanf("%s", operatingSystemsGrades[i].name);
-        printf("Enter the grade: ");
-        scanf("%lf", &operatingSystemsGrades[i].grade);
-        
-        if (operatingSystemsGrades[i].grade >= 3) {
-            operatingSystemsGrades[i].passed = 1;
+    for (int i  = 0; i < n; i++) {
+        printf("Enter the name of student %d: ", i + 1);
+        scanf("%s", students[i].name);
+
+        printf("Enter the grade for exam 1 of student %d: ", i + 1);
+        scanf("%f", &students[i].nE1);
+
+        printf("Enter the grade for exam 2 of student %d: ", i + 1);
+        scanf("%f", &students[i].nE2);
+
+        printf("Enter the grade for assignments and quizzes of student %d: ", i + 1);
+        scanf("%f", &students[i].nAQ);
+
+        printf("Enter the grade for project of student %d: ", i + 1);
+        scanf("%f", &students[i].nP);
+
+        students[i].grade = students[i].nE1 * 0.3 + students[i].nE2 * 0.25 + students[i].nAQ * 0.25 + students[i].nP * 0.2;
+
+        if (students[i].grade >= 3) {
+            students[i].passed = true;
+        } else {
+            students[i].passed = false;
         }
-        else {
-            operatingSystemsGrades[i].passed = 0;
-        }
+
+        printf("\n");
     }
 
-    for (int i = 0; i < totalStudents; ++i) {
-        printf("Student %d: %s, Grade: %.2f, Passed: %s\n", 
-               i + 1, 
-               operatingSystemsGrades[i].name, 
-               operatingSystemsGrades[i].grade, 
-               operatingSystemsGrades[i].passed ? "Yes" : "No");
+    printf("Student\tName\tGrade\tPassed\n");
+
+    for (int i  = 0; i < n; i++) {
+        printf("%d\t%s\t%.1f\t%s\n",
+            i + 1,
+            students[i].name,
+            students[i].grade,
+            students[i].passed ? "Yes" : "No"
+        );
     }
-
-    printf("\n");
-
-    return 0;
 }
